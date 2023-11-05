@@ -75,7 +75,6 @@ public class Picture implements Calculation {
 
     @Override
     public void calc() {
-        DecimalFormat df = new DecimalFormat("#,###.##");
         double inchWidth = widthCm / 2.54;
         String inchWidthString = widthCm + " cm / 2.54 = " + df.format(inchWidth) + " Inch";
         double inchHeight = heightCm / 2.54;
