@@ -68,7 +68,6 @@ public class Audio implements Calculation {
     @Override
     public void calc() {
         DecimalFormat df = new DecimalFormat("#,###.##");
-        String empty = "";
         double bps = hz * bit * channels;
         String bpsString = df.format(hz) + " Hz * " + df.format(bit) + " Bit pro Sample * " + df.format(channels) + (channels == 1 ? " Kanal" : " Kanäle") + " = " + df.format(bps) + " Bits pro Sek.";
         double bph = bps * 60 * 60;
