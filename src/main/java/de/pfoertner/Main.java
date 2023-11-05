@@ -25,8 +25,7 @@ public class Main {
             audio.calculate();
         } else if (input.equals("picture") || input.equals("2")) {
             Picture picture = new Picture();
-            //picture.calculate();
-            System.out.println("This feature is not implemented yet.");
+            picture.calculate();
         } else {
             System.out.println("You have to enter \"audio\" or \"picture\" or 1 or 2.");
             System.out.println("Please restart the program.");
