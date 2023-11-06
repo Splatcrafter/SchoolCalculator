@@ -5,12 +5,43 @@ import de.pfoertner.utils.FileSaver;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+/**
+ * This class represents an audio file.
+ * It implements the Calculation interface to perform size calculations.
+ *
+ * @author Erik Pförtner
+ * @see Calculation
+ * @since 1.0
+ */
 public class Audio implements Calculation {
 
+    /**
+     * This variable represents the frequency in hertz (Hz).
+     */
     private double hz;
+    /**
+     * Represents a private long variable called 'bit'.
+     * This variable is used to store the bit of an audio file.
+     */
     private long bit;
+    /**
+     * Represents the number of channels available.
+     * <p>
+     * Channels are used by audio files to let the user hear sounds from different directions.
+     * For example, if you have a stereo audio file, you can hear sounds from the left and right.
+     * </p>
+     */
     private int channels;
 
+    /**
+     * This method is used to calculate the size of an audio file based on user input for
+     * hz, bit, and channels.
+     * The calculation results will be saved in a file called "results.txt".
+     * The user is prompted for input values and validation is performed to ensure that valid
+     * numeric values are provided.
+     * If the user decides to start the calculation again, the method
+     * recursively calls itself.
+     */
     @Override
     public void calculate() {
         Scanner scanner = new Scanner(System.in);
@@ -65,6 +96,13 @@ public class Audio implements Calculation {
         calc();
     }
 
+    /**
+     * Calculates the size of an audio file based on user input of hz, bit, and channels.
+     * Prompts the user to enter the required values and verifies the input.
+     * If the user enters incorrect values, the process will restart.
+     * Once the input is verified,
+     * the calculation will start and the result will be saved in a file called "results.txt".
+     */
     @Override
     public void calc() {
         double bps = hz * bit * channels;

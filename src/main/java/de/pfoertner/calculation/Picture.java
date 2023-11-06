@@ -5,13 +5,64 @@ import de.pfoertner.utils.FileSaver;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+/**
+ * Represents a picture object and provides methods for calculating the size of a picture file.
+ * <p>
+ * The Picture class implements the Calculation interface.
+ * </p>
+ *
+ * @author Erik Pförtner
+ * @see Calculation
+ * @since 1.0
+ */
 public class Picture implements Calculation {
 
+    /**
+     * Represents the width value in centimeters.
+     */
     private double widthCm;
+    /**
+     * Represents the height of an object in centimeters.
+     * <p>
+     * The height value is stored as a double precision floating point number,
+     * allowing for both whole numbers and decimal values.
+     * </p>
+     */
     private double heightCm;
+    /**
+     * Represents the dots per inch (DPI) value.
+     * <p>
+     * DPI is a measure of the number of dots (pixels) that can be displayed or printed per inch.
+     * This variable stores a double value representing the DPI.
+     */
     private double dpi;
+    /**
+     * Represents a private variable "bit" of type double.
+     *
+     * <p>
+     * The "bit" variable holds a double value.
+     * </p>
+     *
+     * <p>
+     * Note: This variable is marked as private, meaning it can only be accessed within the class it is declared in.
+     * </p>
+     */
     private double bit;
 
+    /**
+     * This method calculates the size of a picture file based on user input of width, height, dpi, and bit.
+     * The calculation is saved in a file called "results.txt".
+     * <p>
+     * It prompts the user to enter the width in cm of the picture, followed by the height, dpi, and bit.
+     * It validates each input to ensure that the user enters a number.
+     * If any input is invalid, it prompts the user again for the correct input.
+     * <p>
+     * After all inputs are received and validated, it displays the user's inputs and asks if they are correct.
+     * If the user answers "N" or "n", the process starts again.
+     * <p>
+     * Once all inputs are confirmed as correct, the calculation begins and the user is asked to wait.
+     * The result is then saved in a file called "results.txt".
+     */
     @Override
     public void calculate() {
         Scanner scanner = new Scanner(System.in);
@@ -73,6 +124,11 @@ public class Picture implements Calculation {
         calc();
     }
 
+    /**
+     * Calculates the size of a picture file based on user input.
+     * Prompts the user to enter the width, height, dpi, and bit of the picture,
+     * and then proceeds to calculate and save the file size in various units.
+     */
     @Override
     public void calc() {
         double inchWidth = widthCm / 2.54;
