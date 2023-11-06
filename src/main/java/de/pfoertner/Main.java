@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input;
-        System.out.println("Welcome to the Size Calculator!");
+        System.out.println("Welcome to the School Calculator!");
         System.out.println("In this program you can calculate the size of audio files like in school lessons.");
         System.out.println("You also can calculate the size of picture files.");
         System.out.println("All your results will be saved in a file called \"results.txt\" with the calculation way.");
